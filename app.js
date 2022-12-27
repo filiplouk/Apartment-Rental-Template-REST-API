@@ -3,13 +3,21 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const app = express();
 
+require('dotenv').config();
 
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
 
+
+// Mongoose connect
+const mongo_password = PROCESS.env.MONGO_PASSWORD;
+mongoose.connect('mongodb+srv://admin-filip:'+mongo_password+'@cluster0.kl1kndo.mongodb.net/propertyDB', {
+  useNewUrlParser: true
+});
 //
+
 
 
 class Properties {
@@ -30,6 +38,7 @@ class Properties {
     this.properties = updatedProperties;
   }
 }
+
 app.get("/properties", (req,res){
 
 
