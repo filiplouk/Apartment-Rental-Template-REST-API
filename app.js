@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = reqquire("cors");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const app = express();
