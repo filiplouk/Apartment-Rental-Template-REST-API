@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = reqquire("cors");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const app = express();
@@ -10,6 +11,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+app.use(cors());
+
 
 
 // Mongoose 
